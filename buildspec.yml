@@ -1,0 +1,20 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+  pre_build:
+    commands:
+      - echo "Installing pre build dependencies"
+  build:
+    commands:
+      - echo "Inside Build Block"
+      - echo "Building the code"
+      - echo "Running Test Cases"
+      -grep -Fq "Congratulations" index.html
+  post_build:
+    commands:
+      - echo "Inside post Build Block"
+artifacts:
+  files:
+    - '**/*'
